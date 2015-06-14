@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Silex i twig tehnologija</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css" rel="stylesheet">
+        <link href="mojcss.css" rel="stylesheet">
+ 
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+      
+
+ 
+      <div class="container">
+        {% block content %}
+        <div class="starter-template">
+        <h1>Forma sa Silex i Twig tehnologijom</h1>
+        <p class="lead">Unesite novi proizvod</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+           <div class="navbar">
+            <ul class="nav navbar-nav">
+              <li{% if active == 'home' %} class="active"{% endif %}><a href="{{ path('home') }}">Home</a></li>
+               <li><a href="FormaUnos.php"> Unos novog proizvoda</a><li>
+  <li><a href="IspisPonudeUrestoranu.php"> Naši proizvodi</a><li>
+    <li><a href="Unos alergena i tipa.html"> Meni</a><li>
+  <li><a href="#"> Meni</a><li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+         
+            <form role="form" method="get" action="UnosenjeSlastica.php">
+                <div class="form-group">
+                
+                <label for="name">Naziv proizvoda:</label>
+                <input class="form-control" type="text" name="naziv">
+              </div>
+                <div class="form-group">
+  <label> Tip proizvoda: </label>
+  
+    <select name="tip"> Izaberi 
+
+<option value="kolač">  Kolač </option>
+<option value="keks">  Keks </option>
+
+</select>
+</div>
+
+             <div class="form-group">
+  <label> Opis proizvoda: </label>
+    <input type="text" name="opis">
+      </div>
+
+ 
+
+<div class="form-group">
+  <label class="control label"> Vegeterijanski: </label>
+ <input type="radio" name="veggie" value="Da">Da
+
+<input type="radio" name="veggie" value="Ne">Ne
+      </div>
+
+ <div class="form-group">
+  <label class="control label"> Halal: </label>
+ <input type="radio" name="hall" value="Da">Da
+
+<input type="radio" name="hall" value="Ne">Ne
+      </div>
+
+<div class="form-group">
+  <label class="control label"> Košer: </label>
+ <input type="radio" name="kosh" value="Da">Da
+
+<input type="radio" name="kosh" value="Ne">Ne
+      </div>
+<div class="form-group">
+  <label> Tipovi alergena: </label>
+  <input type="checkbox" value="jaja" name="compare[]"  />jaja  
+  <input type="checkbox" value="kivi" name="compare[]"  />kivi
+
+
+        <div class="form-group">
+  <label> Cijena proizvoda: </label>
+    <input type="number" name="cijena">
+      </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-default">Unesi proizvod</button>
+              </div>
+
+
+            </form>
+        </div>
+    </div>
+        {% endblock %}
+      </div><!-- /.container -->
+        
+ 
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
